@@ -8,7 +8,7 @@ const StyledSection = styled.section`
 min-height:100vh;
 background:#000;
 color:white;
-padding:120px 0;
+padding:80px 0;
 position:relative;
 overflow:hidden;
 

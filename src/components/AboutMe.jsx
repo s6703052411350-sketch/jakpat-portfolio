@@ -56,7 +56,7 @@ export default function AboutMe() {
         <section style={{
             background: "#000",
             color: "white",
-            padding: "80px 0",
+            padding: "50px 0",
             position: "relative",
             overflow: "hidden"
         }}>

@@ -116,7 +116,7 @@ return(
 style={{
 background:"#000",
 color:"#fff",
-padding:"120px 0",
+padding:"50px 0",
 position:"relative"
 }}
 >
@@ -154,29 +154,40 @@ KMUTNB | Electronics Computer Engineering
 
 </motion.div>
 
-{/* DASHBOARD LAYOUT */}
+{/* DASHBOARD */}
 
 <div
 style={{
 display:"grid",
-gridTemplateColumns:"2fr 1fr",
-gap:"20px",
-marginTop:"40px"
+gridTemplateColumns:"1.7fr 1fr",
+gap:"24px",
+marginTop:"40px",
+alignItems:"stretch"
 }}
 >
 
-{/* LEFT : CHART */}
+{/* LEFT : GRADE DISTRIBUTION */}
 
 <div
 style={{
-background:"rgba(255,255,255,0.05)",
-padding:"30px",
+background:"#0f0f0f",
+border:"1px solid #222",
 borderRadius:"18px",
-border:"1px solid rgba(255,255,255,0.1)"
+padding:"28px",
+display:"flex",
+flexDirection:"column",
+height:"100%"
 }}
 >
 
-<div style={{height:"260px",display:"flex",justifyContent:"center"}}>
+<h4 style={{marginBottom:"20px"}}>
+<Icon icon="mdi:chart-donut" style={{marginRight:"8px"}}/>
+Grade Distribution
+</h4>
+
+<div style={{flex:1,display:"flex",alignItems:"center",justifyContent:"center"}}>
+
+<div style={{height:"260px",width:"100%"}}>
 
 <ResponsiveContainer width="100%" height="100%">
 <PieChart>
@@ -204,61 +215,86 @@ paddingAngle={5}
 
 </div>
 
+</div>
 
-{/* RIGHT : STATS */}
+
+
+{/* RIGHT : ACADEMIC STATS */}
 
 <div
 style={{
+background:"#0f0f0f",
+border:"1px solid #222",
+borderRadius:"18px",
+padding:"28px",
 display:"flex",
 flexDirection:"column",
-gap:"15px"
+justifyContent:"space-between",
+height:"100%"
 }}
 >
 
-{/* STATS ROW */}
+<h4 style={{marginBottom:"18px"}}>
+<Icon icon="mdi:school-outline" style={{marginRight:"8px"}}/>
+Academic Stats
+</h4>
+
+
+{/* STATS */}
 
 <div
 style={{
 display:"grid",
 gridTemplateColumns:"1fr 1fr 1fr",
-gap:"15px"
+gap:"14px"
 }}
 >
 
 {/* GPAX */}
 
-<div style={{
-background:"rgba(255,255,255,0.05)",
-padding:"18px",
+<div
+style={{
+background:"#111",
+padding:"16px",
 borderRadius:"12px",
-border:"1px solid rgba(255,255,255,0.1)"
-}}>
-<p style={{color:"#aaa"}}>GPAX</p>
-<h3>2.29</h3>
+border:"1px solid #222",
+textAlign:"center"
+}}
+>
+<p style={{fontSize:"12px",color:"#888"}}>GPAX</p>
+<h3 style={{margin:0}}>2.29</h3>
 </div>
+
 
 {/* CREDITS */}
 
-<div style={{
-background:"rgba(255,255,255,0.05)",
-padding:"18px",
+<div
+style={{
+background:"#111",
+padding:"16px",
 borderRadius:"12px",
-border:"1px solid rgba(255,255,255,0.1)"
-}}>
-<p style={{color:"#aaa"}}>Credits</p>
-<h3>61</h3>
+border:"1px solid #222",
+textAlign:"center"
+}}
+>
+<p style={{fontSize:"12px",color:"#888"}}>Credits</p>
+<h3 style={{margin:0}}>61</h3>
 </div>
+
 
 {/* SEMESTERS */}
 
-<div style={{
-background:"rgba(255,255,255,0.05)",
-padding:"18px",
+<div
+style={{
+background:"#111",
+padding:"16px",
 borderRadius:"12px",
-border:"1px solid rgba(255,255,255,0.1)"
-}}>
-<p style={{color:"#aaa"}}>Semesters</p>
-<h3>3</h3>
+border:"1px solid #222",
+textAlign:"center"
+}}
+>
+<p style={{fontSize:"12px",color:"#888"}}>Semesters</p>
+<h3 style={{margin:0}}>3</h3>
 </div>
 
 </div>
@@ -274,21 +310,28 @@ style={{textDecoration:"none"}}
 
 <motion.div
 whileHover={{
-scale:1.05,
-boxShadow:"0 10px 30px rgba(212,175,55,0.4)"
+scale:1.04,
+boxShadow:"0 10px 40px rgba(212,175,55,.45)"
 }}
+whileTap={{scale:.96}}
 style={{
+marginTop:"18px",
 background:"#d4af37",
 color:"#000",
-padding:"18px",
+padding:"16px",
 borderRadius:"12px",
 textAlign:"center",
 fontWeight:"600",
-marginTop:"5px"
+display:"flex",
+alignItems:"center",
+justifyContent:"center",
+gap:"10px"
 }}
 >
 
-<Icon icon="mdi:download"/> Download Transcript
+<Icon icon="mdi:download"/>
+
+Download Transcript
 
 </motion.div>
 
@@ -358,13 +401,32 @@ whileInView={{opacity:1,x:0}}
 style={{marginBottom:"40px"}}
 >
 
-<h4>{sem.title}</h4>
-
-<div style={{
-color:"#d4af37",
+<div
+style={{
+display:"flex",
+justifyContent:"space-between",
+alignItems:"center",
 marginBottom:"15px"
-}}>
+}}
+>
+
+<h4 style={{margin:0}}>
+{sem.title}
+</h4>
+
+<div
+style={{
+border:"1px solid #d4af37",
+borderRadius:"20px",
+padding:"4px 14px",
+color:"#d4af37",
+fontSize:"13px",
+fontWeight:"600"
+}}
+>
 GPA {sem.gpa}
+</div>
+
 </div>
 
 {sem.courses.map((c,j)=>(
