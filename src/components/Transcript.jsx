@@ -18,22 +18,24 @@ export default function Transcript(){
 
 const [filter,setFilter]=useState("All");
 
-const semesters=[
+const semesters = [
 
 {
 title:"1ST SEMESTER 2024",
 key:"1ST-2024",
 gpa:"2.35",
 courses:[
-{code:"03523106",name:"Computer Programming",credit:2,grade:"D",skill:"Programming"},
-{code:"03523108",name:"Computer Programming Lab",credit:1,grade:"D",skill:"Programming"},
-{code:"03523206",name:"Electronics Technology",credit:1,grade:"A",skill:"Electronics"},
-{code:"03523208",name:"Electronics Technology Lab",credit:1,grade:"A",skill:"Electronics"},
-{code:"03523501",name:"Database & Data Technology",credit:2,grade:"D+",skill:"Database"},
-{code:"03523600",name:"Database & Data Tech Lab",credit:1,grade:"B",skill:"Database"},
-{code:"03923152",name:"Comm Eng & Report Writing",credit:3,grade:"C",skill:"Communication"},
-{code:"03943111",name:"Differential Equations",credit:3,grade:"C",skill:"Mathematics"},
-{code:"03953103",name:"Entrepreneurship",credit:3,grade:"B",skill:"Business"}
+{code:"030523105",name:"Computer Programming",credit:2,grade:"D",skill:"Programming"},
+{code:"030523106",name:"Electronics Technology",credit:2,grade:"A",skill:"Electronics"},
+{code:"030523205",name:"Computer Programming Lab",credit:1,grade:"D",skill:"Programming"},
+{code:"030523206",name:"Electronics Technology Lab",credit:1,grade:"A",skill:"Electronics"},
+{code:"030523500",name:"Database & Data Technology",credit:2,grade:"B",skill:"Database"},
+{code:"030523501",name:"Computer Network System & Data Communication",credit:2,grade:"D+",skill:"Networking"},
+{code:"030523600",name:"Database & Data Tech Lab",credit:1,grade:"B",skill:"Database"},
+{code:"030523601",name:"Computer Network System & Data Lab",credit:1,grade:"D+",skill:"Networking"},
+{code:"030931152",name:"Communication Engineering & Report Writing",credit:3,grade:"C",skill:"Communication"},
+{code:"030943111",name:"Differential Equations",credit:3,grade:"C",skill:"Mathematics"},
+{code:"030953103",name:"Entrepreneurship",credit:3,grade:"B",skill:"Business"}
 ]
 },
 
@@ -42,16 +44,16 @@ title:"2ND SEMESTER 2024",
 key:"2ND-2024",
 gpa:"1.63",
 courses:[
-{code:"03523107",name:"Microcontroller System",credit:2,grade:"C",skill:"Embedded"},
-{code:"03523118",name:"Object Oriented Programming",credit:2,grade:"D",skill:"OOP"},
-{code:"03523124",name:"Web Application Development",credit:2,grade:"F",skill:"Web"},
-{code:"03523126",name:"Linux OS & Admin",credit:2,grade:"D",skill:"Linux"},
-{code:"03523120",name:"Microcontroller System Lab",credit:1,grade:"D",skill:"Embedded"},
-{code:"03523122",name:"Object Oriented Program Lab",credit:1,grade:"D",skill:"OOP"},
-{code:"03523126",name:"Web App Development Lab",credit:1,grade:"F",skill:"Web"},
-{code:"03523128",name:"Linux OS & Admin Lab",credit:1,grade:"D",skill:"Linux"},
-{code:"03943112",name:"Matrices & Vector Analysis",credit:3,grade:"A",skill:"Mathematics"},
-{code:"03803701",name:"Design Thinking",credit:3,grade:"A",skill:"Design"}
+{code:"030523107",name:"Microcontroller System",credit:2,grade:"C",skill:"Embedded"},
+{code:"030523118",name:"Object Oriented Programming",credit:2,grade:"D",skill:"OOP"},
+{code:"030523124",name:"Web Application Development",credit:2,grade:"F",skill:"Web"},
+{code:"030523126",name:"Linux Operating System & Admin",credit:2,grade:"D",skill:"Linux"},
+{code:"030523207",name:"Microcontroller System Lab",credit:1,grade:"D+",skill:"Embedded"},
+{code:"030523218",name:"Object Oriented Program Lab",credit:1,grade:"D",skill:"OOP"},
+{code:"030523224",name:"Web Application Development Lab",credit:1,grade:"F",skill:"Web"},
+{code:"030523226",name:"Linux Operating System & Admin Lab",credit:1,grade:"D",skill:"Linux"},
+{code:"030943112",name:"Matrices & Vector Analysis",credit:3,grade:"C",skill:"Mathematics"},
+{code:"08030701",name:"Design Thinking",credit:3,grade:"A",skill:"Design"}
 ]
 },
 
@@ -60,35 +62,42 @@ title:"1ST SEMESTER 2025",
 key:"1ST-2025",
 gpa:"2.77",
 courses:[
-{code:"03523107",name:"Microcontroller System",credit:2,grade:"C",skill:"Embedded"},
-{code:"03523118",name:"Object Oriented Programming",credit:2,grade:"D",skill:"OOP"},
-{code:"03523124",name:"Web Application Development",credit:2,grade:"F",skill:"Web"},
-{code:"03523126",name:"Linux Operating System & Admin",credit:2,grade:"D",skill:"Linux"},
-{code:"03523120",name:"Microcontroller System Lab",credit:1,grade:"D",skill:"Embedded"},
-{code:"03523122",name:"Object Oriented Program Lab",credit:1,grade:"D",skill:"OOP"},
-{code:"03523126",name:"Web App Development Lab",credit:1,grade:"F",skill:"Web"},
-{code:"03523128",name:"Linux OS & Admin Lab",credit:1,grade:"D",skill:"Linux"},
-{code:"03943112",name:"Matrices & Vector Analysis",credit:3,grade:"A",skill:"Mathematics"},
-{code:"03803701",name:"Design Thinking",credit:3,grade:"A",skill:"Design"}
+{code:"030523200",name:"Special Project I",credit:1,grade:"A",skill:"Project"},
+{code:"030523503",name:"Mobile Application Development",credit:2,grade:"A",skill:"Mobile"},
+{code:"030523504",name:"Artificial Intelligence",credit:2,grade:"C+",skill:"AI"},
+{code:"030523505",name:"Cybersecurity",credit:2,grade:"D+",skill:"Security"},
+{code:"030523603",name:"Mobile Application Development Lab",credit:1,grade:"A",skill:"Mobile"},
+{code:"030523604",name:"Artificial Intelligence Lab",credit:1,grade:"C+",skill:"AI"},
+{code:"030523605",name:"Cybersecurity Laboratory",credit:1,grade:"D+",skill:"Security"},
+{code:"030523701",name:"Cloud Computing",credit:2,grade:"D+",skill:"Cloud"},
+{code:"030523801",name:"Cloud Computing Laboratory",credit:1,grade:"D+",skill:"Cloud"},
+{code:"030923102",name:"Sciences in Daily Life",credit:3,grade:"A",skill:"Science"},
+{code:"030923103",name:"Science & Tech for Quality of Life & Society",credit:3,grade:"B",skill:"Science"},
+{code:"030933155",name:"English Conversation for Daily Life",credit:3,grade:"C+",skill:"Communication"}
 ]
 }
 
 ];
 
 const gradeColor=(g)=>{
-if(g==="A") return "#00ff9d";
-if(g==="B") return "#4fc3f7";
-if(g==="C") return "#ffc107";
-if(g==="D") return "#ff7043";
-if(g==="F") return "#ff1744";
-return "#d4af37";
+if(g==="A") return "#00E676";     // green
+if(g==="B") return "#29B6F6";     // blue
+if(g==="C") return "#FFCA28";     // yellow
+if(g==="C+") return "#FFD54F";    // light yellow
+if(g==="D") return "#FF7043";     // orange
+if(g==="D+") return "#FF8A65";    // light orange
+if(g==="F") return "#FF1744";     // red
+return "#999";
+
 };
 
 const gradeStats=[
-{name:"A",value:6},
+{name:"A",value:8},
 {name:"B",value:4},
-{name:"C",value:3},
-{name:"D",value:7},
+{name:"C+",value:3},
+{name:"C",value:4},
+{name:"D+",value:7},
+{name:"D",value:6},
 {name:"F",value:2}
 ];
 
